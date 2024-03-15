@@ -157,6 +157,24 @@
 .entry-meta.hover,
 .entry:hover .entry-meta.nohover { display: none; }
 
+/*----------book button--------*/
+.btn-book{
+	background-image: linear-gradient(to right, #0aa98f, #49ff78);
+	text-align: center;
+	align-items: center;
+	justify-content: center;
+	font-weight: 900;
+	font-size: medium;
+	padding: 10px 20px;
+	border-radius: 30px;
+	margin-top: 30px;
+	margin-left: 40px;
+}
+.btn-book:hover{
+	transform: scaleX(1.2);
+	background: #49ff78;
+}
+
 .entry-user { padding: 20px; }
 
 .entry-user img {
