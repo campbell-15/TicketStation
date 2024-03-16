@@ -159,7 +159,7 @@
 
 /*----------book button--------*/
 .btn-book{
-	background-image: linear-gradient(to right, #0aa98f, #49ff78);
+	background-image: linear-gradient(to right, #1972c6, #49e7ff);
 	text-align: center;
 	align-items: center;
 	justify-content: center;
@@ -173,7 +173,7 @@
 }
 .btn-book:hover{
 	transform: scaleX(1.2);
-	background: #49ff78;
+	background: #3eb6db;
 }
 
 .entry-user { padding: 20px; }
