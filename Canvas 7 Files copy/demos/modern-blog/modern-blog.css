@@ -181,6 +181,30 @@
 	background-color:rgb(56, 52, 52);
 }
 
+/*----------book button slider--------*/
+.btn-book-slider{
+	width: 200px;
+	height: 40px;
+	background-color: black;
+	color: #FFF;
+	text-align: center;
+	align-items: center;
+	justify-content: center;
+	font-weight: 900;
+	font-size: 15px;
+	padding: 2px 2px;
+	border: 1px solid gray;
+	border-radius: 10px;
+	box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+	margin-top: 15px;
+	margin-bottom: 20px;
+	margin-left: 45px;
+}
+.btn-book-slider:hover{
+	transform: scaleX(1.2);
+	background-color:rgb(56, 52, 52);
+}
+
 .entry-user { padding: 20px; }
 
 .entry-user img {
