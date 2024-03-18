@@ -185,17 +185,17 @@
 .btn-book-slider{
 	width: 200px;
 	height: 40px;
-	background-color: black;
-	color: #FFF;
+	background-color: #FFF;
+	color: black;
 	text-align: center;
 	align-items: center;
 	justify-content: center;
 	font-weight: 900;
 	font-size: 15px;
 	padding: 2px 2px;
-	border: 1px solid gray;
+	border: 1px solid black;
 	border-radius: 10px;
-	box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+	box-shadow: rgba(50, 50, 93, 0.25) 0px 50px 100px -20px, rgba(0, 0, 0, 0.3) 0px 30px 60px -30px, rgba(10, 37, 64, 0.35) 0px -2px 6px 0px inset;
 	margin-top: 15px;
 	margin-bottom: 20px;
 	margin-left: 45px;
@@ -203,6 +203,7 @@
 .btn-book-slider:hover{
 	transform: scaleX(1.2);
 	background-color:rgb(56, 52, 52);
+	color: #FFF;
 }
 
 .entry-user { padding: 20px; }
