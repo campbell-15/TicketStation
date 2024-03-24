@@ -164,7 +164,9 @@
         height: 100%;
         }
         input, select, textarea {
-        margin-bottom: 10px;
+        width: 150px;
+        height: 30px;
+        margin-bottom: 3px;
         border: 1px solid #ccc;
         border-radius: 3px;
         }
@@ -415,7 +417,7 @@
                     <h1>Volunteer Signup</h1>
                 </div>
                 <br/>
-                <p>The HELP Group is seeking volunteers to serve our community. Fill in the information below to indicate how you would like to become involved.</p>
+                <p>Fill in the information below to indicate the credentials on your ticket.</p>
                 <br/>
                 <div class="colums">
                     <div class="item">
@@ -439,16 +441,12 @@
                     <input id="city" type="text"   name="city" required/>
                     </div>
                     <div class="item">
-                    <label for="state">State<span>*</span></label>
-                    <input id="state" type="text"   name="state" required/>
-                    </div>
-                    <div class="item">
                     <label for="zip">Zip<span>*</span></label>
                     <input id="zip" type="text"   name="zip" required/>
                     </div>
                 </div>
                 <div class="question">
-                    <label>Include my contact information on lists distributed to other attendees.</label>
+                    <label>Sign up for our weekly newsletter?</label>
                     <div class="question-answer">
                     <div>
                         <input type="radio" value="none" id="radio_1" name="info"/>
@@ -471,27 +469,23 @@
                 </div>
                 
                     <div class="question">
-                    <label>Activities Attending</label>
+                    <label>Attending As</label>
                     <div class="question-answer">
                         <div>
                         <input type="radio" value="none" id="radio_10" name="activity"/>
-                        <label for="radio_10" class="radio"><span>CEO luncheon</span></label>
+                        <label for="radio_10" class="radio"><span>Student</span></label>
                         </div>
                         <div>
                         <input  type="radio" value="none" id="radio_11" name="activity"/>
-                        <label for="radio_11" class="radio"><span>Finance seminar</span></label>
+                        <label for="radio_11" class="radio"><span>Event Lab Employee</span></label>
                         </div>
                         <div>
                         <input  type="radio" value="none" id="radio_12" name="activity"/>
-                        <label for="radio_12" class="radio"><span>Leadership seminar</span></label>
+                        <label for="radio_12" class="radio"><span>Event Sponsor</span></label>
                         </div>
                         <div>
                         <input  type="radio" value="none" id="radio_13" name="activity"/>
-                        <label for="radio_13" class="radio"><span>Marketing workshop</span></label>
-                        </div>
-                        <div>
-                        <input  type="radio" value="none" id="radio_14" name="activity"/>
-                        <label for="radio_14" class="radio"><span>Teamwork seminar</span></label>
+                        <label for="radio_13" class="radio"><span>Company HR Representative</span></label>
                         </div>
                     </div>
                     </div>
