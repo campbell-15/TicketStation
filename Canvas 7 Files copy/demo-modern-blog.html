@@ -183,10 +183,11 @@
 					</div><br>
 
 					<form action="">
-						<input type="search" placeholder="Search here ...">
-						<i class="fa fa-search"></i>
+						<input type="search" id="search-input" placeholder="Search here ...">
+						<i class="fa fa-search" id="search-icon"></i>
+						<div id="autocomplete-list"></div>
 					</form>
-
+					
 
 					<!-- Posts
 					============================================= -->
@@ -616,6 +617,8 @@
 	============================================= -->
 	<script src="js/jquery.js"></script>
 	<script src="js/functions.js"></script>
+	<script src="searchbar.js"></script>
+
 
 	<!-- Infinite Scroll -->
 	<script src="js/plugins.infinitescroll.js"></script>
