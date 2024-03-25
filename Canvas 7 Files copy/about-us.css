@@ -1,0 +1,63 @@
+.contacts{
+    background-color: rgb(255, 0, 0);
+    color: white;
+    
+    
+}
+
+#p1 {
+    color: white;
+}
+
+
+
+#tag{
+    background-color: rgb(255, 0, 0);
+    
+}
+
+#tag:hover{
+    background-color: black;
+}
+
+.display-4 {
+    color: white !important;
+  }
+
+.info{
+    background: linear-gradient1(157deg, white 50%, red 50%);
+
+}
+#about{
+    background: linear-gradient(157deg, white 50%, red 50%);
+
+}
+
+#buttonn{
+    background-color: rgb(255, 145, 0);
+}
+
+#buttonn:hover{
+    background-color: black;
+
+}
+
+.nav-link {
+    color: red; 
+    transition: color 0.3s; 
+  }
+
+  .nav-link:hover {
+    color: black; 
+  }
+
+  .nav-link[href="#hero"] {
+    background-color: red !important; 
+  }
+
+  .feature .icon {
+    margin-bottom: 40px; 
+  }
+
+  
+ 
