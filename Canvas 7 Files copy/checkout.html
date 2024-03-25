@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Credit Card Checkout Form</title>
+    
+    <!-- custom css file link  -->
+    <link rel="stylesheet" href="checkout.css">
+
+</head>
+<body>
+    <div id="page" class="site">
+        <div class="container">
+            <div class="outer">
+                <header>
+                    <div class="logo">
+                        <a href="#"><strong>.pay</strong>NOW</a>
+                    </div>
+                    <div class="time-left">
+                        <time id="time">03:00</time>
+                        <span>time-left!</span>
+
+                    </div>
+
+                </header>
+                <section class="payment">
+                    <div class="left">
+                        <form id="registration-form" onsubmit="return false" oninput="authorisePayment()">
+                            <div class="card-number">
+                                <p>Card Number</p>
+                                <span>Enter the 16-digit card number on the card</span>
+                                <div class="card-number-box">
+                                    <input type="number" id="credit-card" data-maxlength="16" oninput="validateCard()" required>
+                                    <p id="card-error"></p>
+                                    <p id="message"></p>
+                                    <span class="cc-logo"></span>
+                                </div>
+                            </div>
+                            <div class="card-holder">
+                                <div class="text">
+                                    <p>Card Name Holder</p>
+                                    <span>Enter name card holder on the card</span>
+                                </div>
+                                <div class="input">
+                                    <input type="text" id="card-name" maxlength="50" autocomplete="off" required>
+                                </div>
+                            </div>
+                            <div class="card-cvv">
+                                <div class="text">
+                                    <p>CVV Number</p>
+                                    <span>Enter 3 digits number on the card</span>
+                                </div>
+                                <div class="input">
+                                    <input type="number" id="cvv" data-maxlength="3" required   oninput="this.value=this.value.slice(0,this.dataset.maxlength); validateCvv()"/>
+                                    <p id="cvv-error"></p>
+                                </div>
+                            </div>
+                            <div class="card-expiration">
+                                <div class="text">
+                                    <p>Expiry Date</p>
+                                    <span>Enter the expiration date of the card</span>
+                                </div>
+                                <div class="input">
+                                    <input type="number" id="exp-month" placeholder="MM" data-maxlength="2" required oninput="this.value=this.value.slice(0,this.dataset.maxlength); validateMonth()"/>
+                                    <p id="month-error"></p>
+                                    <strong> / </strong>
+                                    <input type="number" id="exp-year" placeholder="YYYY" data-maxlength="4"   required oninput="this.value=this.value.slice(0,this.dataset.maxlength); validateYear()"/>
+                                    <p id="year-error"></p>
+                                </div>
+                            </div>
+
+                            <div class="btn-pay">
+                                <button type="submit" class="btn" id="btn-pay" disabled>Pay Now!</button>
+                                
+                                <div class="popup" id="popup-id">
+                                    <img src="./img.checkout/check-mark-icon-png.webp" alt=" check mark image">
+                                    <h2>Thank You!</h2>
+                                    <p>Your Payment has been received.</p>
+                                    <button type="button" id="btn-ok">OK</button>
+                                </div>
+                                </div>
+                        </form>
+
+                    </div>
+                    <div class="right">
+                        <div class="card-virtual">
+                            <p class="cc-logo"></p>
+                            <p class="name-holder">Name on Card </p>
+                            <p class="chip">
+                                <img src="./img.checkout/chip.png" alt="chip image">
+                            </p>
+                            <p class="highlight">
+                                <span class="last-digit" id="card-number">.... .... .... 4567</span>
+                                <span class="expiry">
+                                    <span class="exp-month">MM</span>/</span>
+                                    <span class="exp-year">YYYY</span>
+                                </span>
+                            </p>
+                        </div>
+                        <div class="receipt">
+                        <ul>
+                          <li>
+                            <span>Order Number</span>
+                            <span>15205120</span>
+                          </li>
+                          <li>
+                            <span>Product</span>
+                            <span>Pro Ticket</span>
+                          </li>
+                          <li>
+                            <span>Vat (10%)</span>
+                            <span>$50.00</span>
+                          </li>
+                        </ul>
+                        <div class="total">
+                            <p class="price"><strong>1,255</strong> USD</p>
+                            <P>Total you have to pay!</P>
+                        </div>
+                    </div>
+                    </div>
+                </section>
+            </div>
+        </div>
+
+    </div>
+
+
+
+
+
+<script src="checkout.js"></script>
+</body>
+</html>
