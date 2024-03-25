@@ -1,5 +1,5 @@
 // Sample data for autocomplete
-const data = ['Tech', 'Business', 'Marketing', 'Finance'];
+const data = ['Tech', 'Business', 'Marketing', 'Finance', 'business','finance'];
 
 const searchInput = document.getElementById('search-input');
 const searchIcon = document.getElementById('search-icon');
@@ -53,14 +53,56 @@ document.addEventListener('click', (event) => {
     }
 });
 
+
+// Inside the script tag, and after the filterData declaration
+let financeSearchTerm = '';
+
+document.getElementById('search-icon').addEventListener('click', () => {
+    if (financeSearchTerm === 'finance') {
+        const financeSection = document.querySelector('#finance-section .entry');
+        if (financeSection) {
+            financeSection.scrollIntoView({ behavior: 'smooth' });
+        }
+    }
+    financeSearchTerm = ''; // Reset the financeSearchTerm value
+});
+
 function filterData(searchTerm) {
-    const filteredData = data.filter(item => item.toLowerCase().includes(searchTerm.toLowerCase()));
-    if (filteredData.includes('Marketing')) {
+    marketingSearchTerm = '';
+    businessSearchTerm = '';
+    let filteredData = [];
+
+    if (searchTerm.toLowerCase() === 'finance') {
+        financeSearchTerm = 'finance';
+    } else {
+        filteredData = data.filter(item => item.toLowerCase().includes(searchTerm.toLowerCase()));
+        if (searchTerm.toLowerCase() === 'marketing') {
+            marketingSearchTerm = 'marketing';
+        } else if (searchTerm.toLowerCase() === 'business') {
+            businessSearchTerm = 'business';
+        }
+    }
+
+    return filteredData;
+}
+document.getElementById('search-icon').addEventListener('click', () => {
+    if (marketingSearchTerm.toLowerCase() === 'marketing') {
         const marketingSection = document.getElementById('marketing-section');
         const entryElement = marketingSection.querySelector('.entry');
         if (entryElement) {
             entryElement.scrollIntoView({ behavior: 'smooth' });
         }
     }
-    return filteredData;
-}
+    marketingSearchTerm = '';
+});
+
+document.getElementById('search-icon').addEventListener('click', () => {
+    if (businessSearchTerm === 'business') {
+        const businessSection = document.querySelector('#business-section .entry');
+        if (businessSection) {
+            businessSection.scrollIntoView({ behavior: 'smooth' });
+        }
+    }
+});
+
+

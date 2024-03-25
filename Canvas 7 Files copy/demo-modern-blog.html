@@ -161,6 +161,31 @@
 						<i class="fa fa-search" id="search-icon"></i>
 						<div id="autocomplete-list"></div>
 					</form>
+
+					<script type="module">
+						import { getCategories } from "./data.js";
+						
+						const data = getCategories();
+						
+						// ...
+						
+						document.getElementById('search-input').addEventListener('click', () => {
+							marketingSearchTerm = '';
+						});
+						
+						// ...
+						
+						document.getElementById('search-icon').addEventListener('click', () => {
+							if (marketingSearchTerm.toLowerCase() === 'marketing') {
+								const marketingSection = document.getElementById('marketing-section');
+								const entryElement = marketingSection.querySelector('.entry');
+								if (entryElement) {
+									entryElement.scrollIntoView({ behavior: 'smooth' });
+								}
+							}
+							marketingSearchTerm = '';
+						});
+						</script>
 					
 
 					<!-- Posts
@@ -226,7 +251,7 @@
 						</div>
 
 						<!-- ARTICLE NO. 3 -->
-						<div class="col-md-6 p-3">
+						<div id="finance-section" class="col-md-6 p-3">
 							<div class="entry mb-1">
 								<div class="entry-image mb-3">
 									<div class="fslider" data-arrows="false" data-lightbox="gallery">
@@ -416,7 +441,7 @@
 						</div>
 
 						<!-- ARTICLE NO. 9 -->
-						<div class="col-md-6 p-3">
+						<div id="business-section" class="col-md-6 p-3">
 							<div class="entry mb-1">
 								<div class="entry-image mb-3">
 									<a href="business/image3.png" data-lightbox="image" style="background: url('business/image3.png') no-repeat center center; background-size: cover; height: 278px;"></a>
