@@ -264,7 +264,7 @@
 	-webkit-backface-visibility: hidden;
 }
 
-@media screen and (max-width: 1024px) {
+/*@media screen and (max-width: 1024px) {
     .h5 {
         font-size: 1rem;
     }
@@ -279,7 +279,7 @@
     .h5 {
         margin-bottom: 50%;
     }
-}
+}*/
 
 .slide.flex-active-slide .slide-caption p {
 	-webkit-transition-delay: 0.3s;
