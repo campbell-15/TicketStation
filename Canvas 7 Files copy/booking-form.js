@@ -29,3 +29,8 @@ buttons.forEach(button => {
         toggleSelection(card);
     });
 });
+
+//set payment amount to checkout page
+const setPayment = (amount) =>{
+    sessionStorage.setItem("paymentAmount",amount);
+}
