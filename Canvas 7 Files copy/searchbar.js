@@ -52,3 +52,15 @@ document.addEventListener('click', (event) => {
         autocompleteList.style.display = 'none';
     }
 });
+
+function filterData(searchTerm) {
+    const filteredData = data.filter(item => item.toLowerCase().includes(searchTerm.toLowerCase()));
+    if (filteredData.includes('Marketing')) {
+        const marketingSection = document.getElementById('marketing-section');
+        const entryElement = marketingSection.querySelector('.entry');
+        if (entryElement) {
+            entryElement.scrollIntoView({ behavior: 'smooth' });
+        }
+    }
+    return filteredData;
+}
