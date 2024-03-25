@@ -1,8 +1,12 @@
+//property validating the inputs
+const validation ={
 
-let validNumber = false;
-let validCvv = false; 
-let validMonth = false;
-let validYear = false;
+    validNumber:false,
+    validCvv:false, 
+    validMonth:false,
+    validYear:false
+
+};
 //Adding event listener for payment button using a styled class
  const openPopup = document.getElementById("btn-pay");
  const closePopup = document.getElementById("btn-ok");
@@ -22,7 +26,7 @@ closePopup.addEventListener("click", () => {
 
 
 //setting up the function for time left!
-function startTimer(duration, display) {
+const startTimer = (duration, display) =>{
     let timer = duration, minutes, seconds;
     setInterval(function () {
         minutes = parseInt(timer / 60, 10);
@@ -47,57 +51,57 @@ window.onload = function () {
 
 
 //validating the cvv on the card
-function validateCvv(){
+const validateCvv = () => {
     let cvv = document.getElementById("cvv").value;
     //if statement
     if(parseInt(cvv) < 3){
         document.getElementById("cvv-error").innerHTML = "Invalid CVV";
-        validCvv = false;
+        validation.validCvv = false;
         document.getElementById("cvv-error").style.color = "red";
     
     }
     else{
         document.getElementById("cvv-error").innerHTML = "";
-        validCvv = true;
+        validation.validCvv = true;
     }
 }
 
 
 //Validating the month on card
-function validateMonth(){
+const validateMonth = () => {
     let month = document.getElementById("exp-month").value;
     
      // Display a message based on the validity of the card month    
     if (parseInt(month) < 1 || parseInt(month) > 12){
         document.getElementById("month-error").innerHTML = "Invalid Month"; 
-        validMonth = false;
+        validation.validMonth = false;
         document.getElementById("month-error").style.color= "red";
     }
     else{
         document.getElementById("month-error").innerHTML = "";
-        validMonth = true;
+        validation.validMonth = true;
     }
 }
 
 
 //validating the year on card
-function validateYear(){
+const validateYear = () => {
     let year = document.getElementById("exp-year").value;
 
      // Display a message based on the validity of the card year    
     if (parseInt(year) < new Date().getFullYear()){
         document.getElementById("year-error").innerHTML = "Invalid Year";
-        validYear = false;
+        validation.validYear = false;
         document.getElementById("year-error").style.color = "red";
     }
     else{
         document.getElementById("year-error").innerHTML = "";
-        validYear = true;
+        validation.validYear = true;
     }
 }
 
 //function validating the card number
-function validateCard() { 
+const validateCard = () => { 
     // Retrieve the card number from the input field             
     let cardNumber = document.getElementById('credit-card').value; 
 
@@ -110,16 +114,16 @@ function validateCard() {
     // Display a message based on the validity of the card number             
     if(isValid == false) {
         document.getElementById("card-error").innerHTML = "Invalid Card Number"; 
-        validNumber = false; 
+        validation.validNumber = false; 
         document.getElementById("card-error").style.color = "red";
     } 
     else{          
         document.getElementById("card-error").innerHTML = ""; 
-        validNumber = true;
+        validation.validNumber = true;
     }       
  }         
 
-function luhnCheck(cardNumber) { 
+const luhnCheck = (cardNumber) => { 
     var sum = 0;             
     var shouldDouble = false;             
     // Iterate through the card number from right to left             
@@ -142,19 +146,19 @@ function luhnCheck(cardNumber) {
 
  
 //function to activate the payment button
-function authorisePayment(){
+const authorisePayment = () => {
     const cardNumber = document.getElementById("credit-card").value.trim();
         const cardName = document.getElementById("card-name").value.trim();
         const cardCvv = document.getElementById("cvv").value.trim();
         const cardMonth = document.getElementById("exp-month").value.trim();
         const cardYear = document.getElementById("exp-year").value.trim();
 
-      document.getElementById("btn-pay").disabled = !(cardNumber&& cardName&& cardCvv&& cardMonth&& cardYear&& validNumber&& validCvv&& validMonth&& validYear);
+      document.getElementById("btn-pay").disabled = !(cardNumber&& cardName&& cardCvv&& cardMonth&& cardYear&& validation.validNumber&& validation.validCvv&& validation.validMonth&& validation.validYear);
 
 }
 
 //function to clear the form after payment
-function clearForm(){
+const clearForm = () =>{
     let element = document.getElementById("registration-form");          
     element.reset();
 
@@ -184,3 +188,7 @@ document.getElementById('exp-year').addEventListener('keyup', function() {
     document.querySelector('.exp-year').innerHTML = this.value;
 });
 
+//Event listener for text amount on the checkout page
+document.addEventListener('DOMContentLoaded', function () {             
+    document.getElementById('price').textContent = '$'+ sessionStorage.getItem("paymentAmount"); 
+    }); 
