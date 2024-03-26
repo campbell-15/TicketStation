@@ -412,7 +412,7 @@
 
         <!-- booking form -->
         <div class="testbox">
-            <form action="/">
+            <form action="/checkout.html">
                 <div class="banner">
                     <!-- <h1>Events Lab</h1> -->
                     <img src="./tech/eventlabtransparent.png" alt="" style="width: 80%; height: 110%;">
@@ -492,11 +492,24 @@
                     </div>
                 </div>
                 <div class="btn-block">
-                    <button type="submit" onclick="window.location.href = 'checkout.html';">Buy Ticket</button>
+                    <button type="submit">Buy Ticket</button>
                 </div>
             </form>
         </div>
     </main>
+
+    <script>
+        const form = document.querySelector('form');
+    
+        form.addEventListener('submit', (event) => {
+            event.preventDefault();
+            // You can add any custom validation logic or behavior here
+    
+            // Redirect the user to 'checkout.html'
+            window.location.href = 'checkout.html';
+        });
+    </script>
+
 
     </div>
     <script src="booking-form.js"></script>
